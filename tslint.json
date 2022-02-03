@@ -1,4 +1,5 @@
 {
+  "ordered-imports": false,
   "extends": "tslint:recommended",
   "rules": {
     "arrow-parens": ["as-needed", { "requireForBlockBody": true }],

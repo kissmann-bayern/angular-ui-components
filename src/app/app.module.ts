@@ -2,6 +2,7 @@ import { NgModule } from 'angular-ts-decorators';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ViewComponent } from './view/view.component';
+import { ProgressbarComponent } from './components/progressbar/progressbar.component';
 import './styles.css';
 
 @NgModule({
