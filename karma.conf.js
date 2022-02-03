@@ -1,5 +1,5 @@
 // Karma configuration file, see link for more information
-// https://karma-runner.github.io/1.0/config/configuration-file.html
+// https://karma-runner.github.io/1.0/config/configuration-file.htmls
 const webpack = require('./webpack.test');
 // webpackConfig.mode = 'test';
 // webpackConfig.entry = 'test/test.ts';
