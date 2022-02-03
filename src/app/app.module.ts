@@ -1,11 +1,11 @@
-import { NgModule } from "angular-ts-decorators";
-import { AppRoutingModule } from "./app-routing.module";
-import { AppComponent } from "./app.component";
-import { ViewComponent } from "./view/view.component";
-import "./styles.css";
+import { NgModule } from 'angular-ts-decorators';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { ViewComponent } from './view/view.component';
+import './styles.css';
 
 @NgModule({
-  id: "AppModule",
+  id: 'AppModule',
   imports: [AppRoutingModule],
   declarations: [AppComponent, ViewComponent, ProgressbarComponent],
   /*providers: [
