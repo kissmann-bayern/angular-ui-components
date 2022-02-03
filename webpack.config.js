@@ -57,10 +57,6 @@ module.exports = (env, argv) => {
           use: [MiniCssExtractPlugin.loader, 'css-loader', 'resolve-url-loader']
         },
         {
-          test: /\.scss$/,
-          use: [MiniCssExtractPlugin.loader, 'css-loader', 'resolve-url-loader', 'sass-loader']
-        },
-        {
           test: /\.ts$/,
           exclude: /node_modules/,
           use: [
