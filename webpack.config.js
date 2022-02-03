@@ -118,6 +118,7 @@ module.exports = (env, argv) => {
     },
     // devtool: 'eval-source-map',
     devServer: {
+      inline: false,
       contentBase: distPath,
       hot: true
     }
