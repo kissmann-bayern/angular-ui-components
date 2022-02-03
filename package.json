@@ -2,7 +2,6 @@
   "name": "angular-ui-components",
   "version": "2.1.1",
   "description": "",
-  "repository": "https://github.com/kissmannchristoph/angular-ui-components",
   "license": "MIT",
   "devDependencies": {
     "@types/angular": "1.6.54",
