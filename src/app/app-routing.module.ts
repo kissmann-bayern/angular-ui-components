@@ -1,33 +1,33 @@
-import { StateProvider } from '@uirouter/angularjs';
-import { Ng1StateDeclaration } from '@uirouter/angularjs/lib/interface';
-import { getTypeName, NgModule } from 'angular-ts-decorators';
-import { ViewComponent } from './view/view.component';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-export interface UiState extends Ng1StateDeclaration {
-  component?: any;
-}
-
-const routes: UiState[] = [
-  { name: 'index', url: '', redirectTo: 'dashboard' },
-  { name: 'dashboard', url: '/view', component: ViewComponent }
+const routes: Routes = [
+  {
+    path: 'settings',
+    loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule)
+  },
+  {
+    path: 'editor',
+    loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule)
+  },
+  {
+    path: 'article',
+    loadChildren: () => import('./article/article.module').then(m => m.ArticleModule)
+  }
 ];
 
-function getNg1StateDeclaration(state: UiState) {
-  if (state.component && typeof state.component !== 'string') {
-    state.component = getTypeName(state.component);
-  }
-  return state;
-}
-
 @NgModule({
-  id: 'AppRoutingModule',
-  imports: ['ui.router']
+  imports: [RouterModule.forRoot(routes, {
+    // preload all modules; optionally we could
+    // implement a custom preloading strategy for just some
+    // of the modules (PRs welcome 😉)
+    preloadingStrategy: PreloadAllModules,
+    relativeLinkResolution: 'legacy'
+})],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {
-  static config($stateProvider: StateProvider) {
-    'ngInject';
-    routes.forEach((route) =>
-      $stateProvider.state(getNg1StateDeclaration(route))
-    );
-  }
-}
+export class AppRoutingModule {}

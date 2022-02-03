@@ -1,17 +1,28 @@
-import { NgModule } from 'angular-ts-decorators';
-import { AppRoutingModule } from './app-routing.module';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
 import { AppComponent } from './app.component';
-import { ViewComponent } from './view/view.component';
-import { ProgressbarComponent } from './components/progressbar/progressbar.component';
-import './styles.css';
+import { AuthModule } from './auth/auth.module';
+import { HomeModule } from './home/home.module';
+import {
+  FooterComponent,
+  HeaderComponent,
+  SharedModule
+} from './shared';
+import { AppRoutingModule } from './app-routing.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
-  id: 'AppModule',
-  imports: [AppRoutingModule],
-  declarations: [AppComponent, ViewComponent, ProgressbarComponent],
-  /*providers: [
-    HeroService,
-  ],*/
+  declarations: [AppComponent, FooterComponent, HeaderComponent],
+  imports: [
+    BrowserModule,
+    CoreModule,
+    SharedModule,
+    HomeModule,
+    AuthModule,
+    AppRoutingModule
+  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
