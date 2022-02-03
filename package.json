@@ -4,6 +4,7 @@
   "description": "",
   "repository": "https://github.com/kissmannchristoph/angular-ui-components",
   "license": "MIT",
+  "main": "index.js",
   "devDependencies": {
     "@types/angular": "1.6.54",
     "@types/angular-mocks": "^1.7.0",
