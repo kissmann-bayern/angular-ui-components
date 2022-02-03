@@ -21,8 +21,8 @@ module.exports = (env, argv) => {
       chunkFilename: '[id].[contenthash:4].css'
     }),
     new ForkTsCheckerWebpackPlugin({
-      tslint: true,
-      checkSyntacticErrors: true
+      tslint: false,
+      checkSyntacticErrors: false
     })
   ];
 
